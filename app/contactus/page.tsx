@@ -110,8 +110,7 @@ export default function Contactus() {
 
       
 
-      {success && <p className="text-green-600">{success}</p>}
-      {error && <p className="text-red-600">{error}</p>}
+      
       <Footer />
     </div>
   );
