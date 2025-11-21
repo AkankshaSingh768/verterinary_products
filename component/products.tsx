@@ -1,4 +1,6 @@
+'use client';
 import Image from "next/image";
+import {motion} from "framer-motion";
 
 
 
@@ -10,7 +12,7 @@ export default function Products() {
       role: "Project Manager",
       company: "AlphaWave",
       quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
+      image: "/CinerariaMaritima.jpg",
     },
     {
       id: 2,
@@ -18,7 +20,7 @@ export default function Products() {
       role: "Project Manager",
       company: "AlphaWave",
       quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
+      image: "/FourLifeTransferFactor.jpg",
     },
     {
       id: 3,
@@ -26,7 +28,7 @@ export default function Products() {
       role: "Project Manager",
       company: "AlphaWave",
       quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
+      image: "/Harpagophytum.jpg",
     },
     {
       id: 4,
@@ -34,7 +36,7 @@ export default function Products() {
       role: "Project Manager",
       company: "AlphaWave",
       quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
+      image: "/Kirkland.jpg",
     },
     {
       id: 5,
@@ -42,7 +44,7 @@ export default function Products() {
       role: "Project Manager",
       company: "AlphaWave",
       quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
+      image: "/MiltonHerbs.jpg",
     },
     {
       id: 6,
@@ -50,7 +52,7 @@ export default function Products() {
       role: "Project Manager",
       company: "AlphaWave",
       quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
+      image: "/MotherTInctore.jpg",
     },
     {
       id: 7,
@@ -58,7 +60,7 @@ export default function Products() {
       role: "Project Manager",
       company: "AlphaWave",
       quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
+      image: "/Prosoluble.jpg",
     },
     {
       id: 8,
@@ -66,7 +68,7 @@ export default function Products() {
       role: "Project Manager",
       company: "AlphaWave",
       quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
+      image: "/SerraPet.jpg",
     },
     {
       id: 9,
@@ -74,75 +76,43 @@ export default function Products() {
       role: "Project Manager",
       company: "AlphaWave",
       quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
+      image: "/Symlin.jpg",
     },
-    {
-      id: 10,
-      name: "Jordan Lee",
-      role: "Project Manager",
-      company: "AlphaWave",
-      quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
-    },
-    {
-      id: 11,
-      name: "Jordan Lee",
-      role: "Project Manager",
-      company: "AlphaWave",
-      quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
-    },
-    {
-      id: 12,
-      name: "Jordan Lee",
-      role: "Project Manager",
-      company: "AlphaWave",
-      quote: "Fast, flexible, and genuinely smart.",
-      image: "/OIP3.webp",
-    },
+    
+    
+    
   
   ]
   return (
-   <div id="products" className="mx-auto relative  items-center max-w-7xl py-15 justify-between">
-    
-     <h1 className="text-center text-5xl">Our Products</h1>
+ <div id="products" className="mx-auto relative items-center max-w-7xl py-15 justify-between">
+  <h1 className="text-center text-5xl">Our Products</h1>
 
-    <div 
-       
-        className="grid grid-cols-2 py-15 md:grid-cols-2 px-5 lg:grid-cols-3 gap-6">
-          {test.map((t) => (
-            <div
-              key={t.id}
-              className="rounded-2xl p-6 flex flex-col items-start shadow-md hover:shadow-xl transition-all duration-300"
-            >
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-14 h-14 rounded-full overflow-hidden">
-                  <Image
-                    src={t.image}
-                    alt={t.name}
-                    width={56}
-                    height={56}
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="font-semibold text-base">{t.name}</p>
-                  <p className="text-gray-400 text-sm">
-                    {t.role} • {t.company}
-                  </p>
-                </div>
-              </div>
-              <p className="text-lg leading-snug text-gray-200 italic">
-                “{t.quote}”
-              </p>
-            </div>
-          ))}
+  <motion.div
+  initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once:false, amount: 0.4 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+   className="grid grid-cols-2 py-15 md:grid-cols-2 px-5 lg:grid-cols-3 gap-6">
+    {test.map((t) => (
+      <div
+        key={t.id}
+        className="rounded-2xl p-4 shadow-md hover:shadow-xl transition-all duration-300"
+      >
+        <div className="w-full h-full rounded-xl overflow-hidden">
+          <Image
+            src={t.image}
+            alt="Product Image"
+            width={400}
+            height={300}
+            className="object-cover w-full h-full"
+
+          />
         </div>
+      </div>
+    ))}
+  </motion.div>
+</div>
 
-
-
-
-    </div>
                 
      
      

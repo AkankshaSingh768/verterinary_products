@@ -1,10 +1,26 @@
 import { NextResponse } from "next/server";
-import { connectDB } from "@/lib/db";
+import connectDB from "@/lib/connectdb";
 import Contact from "@/models/contact";
 
-export async function POST(req:Request) {
+export async function GET() {
+  return NextResponse.json({ ok: true, msg: "Contact API is reachable" });
+}
+
+export async function POST(req: Request) {
   try {
-    const body = await req.json();
+    // Guard against empty or invalid JSON body to avoid "Unexpected end of JSON input"
+    const text = await req.text();
+    if (!text) {
+      return NextResponse.json({ success: false, error: "Empty request body" }, { status: 400 });
+    }
+
+    let body: any;
+    try {
+      body = JSON.parse(text);
+    } catch (err) {
+      return NextResponse.json({ success: false, error: "Invalid JSON body" }, { status: 400 });
+    }
+
     const { name, email, message } = body;
 
     await connectDB();
@@ -20,11 +36,7 @@ export async function POST(req:Request) {
 
   } catch (error) {
     console.log("ERROR:", error);
-    // Return a serializable error message so the client can read it
     const message = error instanceof Error ? error.message : String(error);
-    return NextResponse.json(
-      { success: false, error: message },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, error: message }, { status: 500 });
   }
 }
