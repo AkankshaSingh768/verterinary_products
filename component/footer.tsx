@@ -23,7 +23,7 @@ export default function Footer() {
                     <h3 className=" font-bold mb-4 text-lg">Information</h3>
                     <ul className="space-y-2 text-sm">
                         <li><Link href="/services" className="hover:text-amber-800">Services</Link></li>
-                        <li><Link href="/banner" className="hover:text-amber-800">Our Products</Link></li>
+                        <li><a href="#" className="hover:text-amber-800">Our Products</a></li>
                     </ul>
                 </div>
 
