@@ -61,9 +61,9 @@ export default function Header() {
               <Link href="/services" className="cursor-pointer hover:text-orange-600">Services</Link>
               <a href="#products" className="cursor-pointer hover:text-orange-600">Our Products</a>
 
-              <a href="/contact" className="cursor-pointer hover:text-orange-600">Contact us</a>
+              <a href="/contactus" className="cursor-pointer hover:text-orange-600">Contact us</a>
               <a 
-  href="/AkankshaSinghR.pdf"
+  href="/Documentation.pdf"
   download
   target="_blank"
   className="border px-6 py-4 rounded-xl  text-white bg-black"

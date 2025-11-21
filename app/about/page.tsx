@@ -14,7 +14,7 @@ export default function About() {
     const test = [
         {
 
-            image: "/first.jpg",
+            image: "/First.jpg",
         },
         {
 

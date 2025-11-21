@@ -22,8 +22,8 @@ export default function Footer() {
                 <div className="text-center md:text-left">
                     <h3 className=" font-bold mb-4 text-lg">Information</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><a href="#" className="hover:text-amber-800">Services</a></li>
-                        <li><a href="#" className="hover:text-amber-800">Our Products</a></li>
+                        <li><Link href="/services" className="hover:text-amber-800">Services</Link></li>
+                        <li><Link href="/banner" className="hover:text-amber-800">Our Products</Link></li>
                     </ul>
                 </div>
 
@@ -44,7 +44,7 @@ export default function Footer() {
 
             {/* Bottom Line */}
             <div className="mt-12 border-t pt-6 text-center text-xs md:text-sm tracking-wide">
-                Since 1990
+                All the rights are reserved Since 1990
             </div>
         </footer>
     );
